@@ -3,10 +3,34 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { lazy, Suspense } from "react";
+
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
+const Services = lazy(() => import("./pages/Services"));
+const Booking = lazy(() => import("./pages/Booking"));
+const Calculator = lazy(() => import("./pages/Calculator"));
+const Contact = lazy(() => import("./pages/Contact"));
+const About = lazy(() => import("./pages/About"));
+const Pricing = lazy(() => import("./pages/Pricing"));
+const Projects = lazy(() => import("./pages/Projects"));
+const Blog = lazy(() => import("./pages/Blog"));
+const Privacy = lazy(() => import("./pages/Privacy"));
+
+const Installation = lazy(() => import("./pages/services/Installation"));
+const Maintenance = lazy(() => import("./pages/services/Maintenance"));
+const Repair = lazy(() => import("./pages/services/Repair"));
+const ACInstall = lazy(() => import("./pages/services/ACInstall"));
+const Relocation = lazy(() => import("./pages/services/Relocation"));
+
 const queryClient = new QueryClient();
+
+const Loading = () => (
+  <div className="flex min-h-screen items-center justify-center bg-background">
+    <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
+  </div>
+);
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -14,11 +38,26 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <Suspense fallback={<Loading />}>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/teenused" element={<Services />} />
+            <Route path="/broneeri" element={<Booking />} />
+            <Route path="/kalkulaator" element={<Calculator />} />
+            <Route path="/kontakt" element={<Contact />} />
+            <Route path="/meist" element={<About />} />
+            <Route path="/hinnakiri" element={<Pricing />} />
+            <Route path="/tehtud-tood" element={<Projects />} />
+            <Route path="/blogi" element={<Blog />} />
+            <Route path="/privaatsus" element={<Privacy />} />
+            <Route path="/ohksoojuspumba-paigaldus-tartu" element={<Installation />} />
+            <Route path="/ohksoojuspumba-hooldus-tartu" element={<Maintenance />} />
+            <Route path="/ohksoojuspumba-remont-tartu" element={<Repair />} />
+            <Route path="/kliimaseadme-paigaldus-tartu" element={<ACInstall />} />
+            <Route path="/seadmete-umberpaigaldus-ja-utiliseerimine" element={<Relocation />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
