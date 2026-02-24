@@ -5,31 +5,36 @@ const services = [
   {
     icon: Thermometer,
     title: "Soojuspumba paigaldus",
-    desc: "Õhk-õhk soojuspumba professionaalne paigaldus koos seadistamisega.",
+    desc: "Õhk-õhk soojuspumba professionaalne paigaldus koos seadistamisega. Standardpaigaldus sisaldab torustikku kuni 5m, ilukarbikut ja seinakonsoolit.",
+    price: "390€",
     href: "/ohksoojuspumba-paigaldus-tartu",
   },
   {
     icon: Settings,
     title: "Hooldus",
-    desc: "Regulaarne hooldus pikendab seadme eluiga ja hoiab efektiivsuse kõrgel.",
+    desc: "Regulaarne hooldus pikendab seadme eluiga ja hoiab efektiivsuse kõrgel. Sisaldab filtrite puhastust, soojusvaheti pesu ja dreenisüsteemi kontrolli.",
+    price: "70€",
     href: "/ohksoojuspumba-hooldus-tartu",
   },
   {
     icon: Wrench,
-    title: "Remont",
-    desc: "Kiire rikete diagnoosimine ja remont. Väljakutse Tartus ja lähiümbruses.",
+    title: "Remont ja diagnostika",
+    desc: "Kiire rikete diagnoosimine ja remont. Väljakutse Tartus ja lähiümbruses. Defekteerimine ja veakoodide lugemine.",
+    price: "60€",
     href: "/ohksoojuspumba-remont-tartu",
   },
   {
     icon: Wind,
     title: "Kliimaseadme paigaldus",
-    desc: "Jahutus- ja kliimaseadmete paigaldus kodudesse ja kontoritesse.",
+    desc: "Jahutus- ja kliimaseadmete paigaldus kodudesse ja kontoritesse. Kaasaegne seade pakub nii jahutust kui kütet.",
+    price: "390€",
     href: "/kliimaseadme-paigaldus-tartu",
   },
   {
     icon: ArrowRightLeft,
-    title: "Ümberpaigaldus",
-    desc: "Seadmete demonteerimine, teisaldamine ja uuesti paigaldamine.",
+    title: "Ümberpaigaldus ja utiliseerimine",
+    desc: "Seadmete demonteerimine, teisaldamine ja uuesti paigaldamine. Vananenud seadmete keskkonnasõbralik utiliseerimine.",
+    price: "70€",
     href: "/seadmete-umberpaigaldus-ja-utiliseerimine",
   },
 ];
@@ -53,8 +58,11 @@ const ServiceCards = () => (
             </div>
             <h3 className="font-display text-lg font-bold text-foreground">{s.title}</h3>
             <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
-            <div className="mt-4 flex items-center gap-1 text-sm font-semibold text-primary opacity-0 transition-opacity group-hover:opacity-100">
-              Loe lähemalt <ArrowRight className="h-4 w-4" />
+            <div className="mt-4 flex items-center justify-between">
+              <span className="text-sm font-bold text-primary">Alates {s.price}</span>
+              <span className="flex items-center gap-1 text-sm font-semibold text-primary opacity-0 transition-opacity group-hover:opacity-100">
+                Loe lähemalt <ArrowRight className="h-4 w-4" />
+              </span>
             </div>
           </Link>
         ))}
