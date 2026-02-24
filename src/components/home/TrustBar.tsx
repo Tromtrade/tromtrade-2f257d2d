@@ -4,7 +4,7 @@ const items = [
   { icon: Clock, label: "Kiire reageerimine", desc: "Vastame 24h jooksul" },
   { icon: Shield, label: "Garantii töödele", desc: "Kuni 5 aastat" },
   { icon: Award, label: "Sertifitseeritud", desc: "F-gaasi pädevus" },
-  { icon: ThumbsUp, label: "100+ paigaldust", desc: "Rahulolev klient" },
+  { icon: ThumbsUp, label: "100+ paigaldust aastas", desc: "Rahulolev klient" },
 ];
 
 const TrustBar = () => (

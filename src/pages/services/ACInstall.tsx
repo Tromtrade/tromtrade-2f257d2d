@@ -8,7 +8,7 @@ const ACInstallPage = () => (
     process={["Konsultatsioon ja ruumi hindamine", "Seadme valik ja pakkumine", "Paigaldus", "Seadistamine ja koolitus"]}
     included={["Sise- ja välisseadme paigaldus", "Torustik kuni 3m", "Seadistamine"]}
     notIncluded={["Seadme maksumus", "Torustik üle 3m", "Lisaelektritööd"]}
-    priceRange="500€"
+    priceRange="390€"
     faqs={[
       { q: "Mis vahe on soojuspumbal ja konditsioneeril?", a: "Kaasaegne soojuspump töötab nii jahutus- kui küttereziimil. Konditsioneer on sama seade, mida kasutatakse peamiselt jahutuseks." },
       { q: "Kas kliimaseade jahutab piisavalt?", a: "Jah, õigesti dimensioneeritud seade jahutab ka kuumal suvel efektiivselt." },

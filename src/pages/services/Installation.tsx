@@ -9,7 +9,7 @@ const InstallationPage = () => (
     process={["Võtate ühendust ja kirjeldate oma vajadust", "Hindame objekti ja soovitame sobiva seadme", "Esitame selge hinnapakkumise", "Paigaldame seadme ja seadistame", "Juhendame kasutamist ja anname garantii"]}
     included={["Sise- ja välisseadme paigaldus", "Torustik kuni 3m", "Elektriühendus", "Seadistamine", "Kasutuskoolitus"]}
     notIncluded={["Seadme maksumus (eraldi)", "Torustik üle 3m", "Lisaelektritööd"]}
-    priceRange="500€"
+    priceRange="390€"
     faqs={[
       { q: "Kui kaua paigaldus aega võtab?", a: "Standardpaigaldus kestab 4–8 tundi." },
       { q: "Kas seadme saab ise valida?", a: "Jah, aitame valida teie vajaduste ja eelarve järgi parima variandi." },
