@@ -53,8 +53,8 @@ const ServiceCards = () => (
             to={s.href}
             className="group rounded-xl border border-border bg-card p-6 transition-all hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5"
           >
-            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-colors group-hover:bg-primary/20">
-              <s.icon className="h-6 w-6 text-primary" />
+            <div className={`mb-4 flex h-12 w-12 items-center justify-center rounded-lg transition-colors ${s.title === "Soojuspumba paigaldus" ? "bg-gradient-to-br from-primary/15 to-accent/15 group-hover:from-primary/25 group-hover:to-accent/25" : "bg-primary/10 group-hover:bg-primary/20"}`}>
+              <s.icon className={`h-6 w-6 ${s.title === "Soojuspumba paigaldus" ? "text-transparent bg-gradient-to-br from-primary to-accent bg-clip-text stroke-primary" : "text-primary"}`} />
             </div>
             <h3 className="font-display text-lg font-bold text-foreground">{s.title}</h3>
             <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>

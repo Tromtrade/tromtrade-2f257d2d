@@ -1,7 +1,7 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const faqs = [
-  { q: "Kui palju maksab soojuspumba paigaldus?", a: "Paigalduse hind sõltub seadme tüübist, ruumi suurusest ja paigaldustingimtustest. Tüüpiline hind algab 500€-st. Küsige personaalset pakkumist!" },
+  { q: "Kui palju maksab soojuspumba paigaldus?", a: "Paigalduse hind sõltub seadme tüübist, ruumi suurusest ja paigaldustingimustest. Standardpaigalduse hind algab 390€-st. Küsige personaalset pakkumist!" },
   { q: "Kui kaua võtab paigaldus aega?", a: "Standardne ühe siseseadme paigaldus võtab aega 4–8 tundi. Keerukamate lahenduste puhul planeerime tööd mitme päeva peale." },
   { q: "Kas soojuspump töötab ka talvel?", a: "Jah, kaasaegsed õhk-õhk soojuspumbad töötavad efektiivselt kuni -25°C juures. Soovitame kvaliteetseid brände nagu Panasonic ja Cooper&Hunter." },
   { q: "Kui tihti peab soojuspumpa hooldama?", a: "Soovitame hooldust vähemalt kord aastas. Regulaarne hooldus pikendab seadme eluiga ja hoiab energiatõhususe kõrgel." },
