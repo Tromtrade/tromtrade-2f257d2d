@@ -1,7 +1,9 @@
 import { useState } from "react";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Loader2 } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 const serviceTypes = ["Paigaldus", "Hooldus", "Remont", "Kliimaseade", "Ümberpaigaldus"];
 const propertyTypes = ["Korter", "Maja", "Kontor", "Muu"];
@@ -18,12 +20,39 @@ const BookingPage = () => {
     notes: "", consent: false,
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const set = (key: string, val: string | boolean) => setForm(f => ({ ...f, [key]: val }));
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Quote form:", form);
+    setLoading(true);
+    const params = new URLSearchParams(window.location.search);
+    const { error } = await supabase.from("leads").insert({
+      form_type: "quote",
+      name: form.name,
+      phone: form.phone,
+      email: form.email || null,
+      city: form.city,
+      address: form.address || null,
+      service_type: form.service,
+      property_type: form.property,
+      area_sqm: form.area ? Number(form.area) : null,
+      heating_type: form.heating,
+      brand_preference: form.brand,
+      timeframe: form.timeframe,
+      notes: form.notes || null,
+      consent: form.consent,
+      page_url: window.location.pathname,
+      utm_source: params.get("utm_source") || null,
+      utm_medium: params.get("utm_medium") || null,
+      utm_campaign: params.get("utm_campaign") || null,
+    });
+    setLoading(false);
+    if (error) {
+      toast.error("Viga andmete saatmisel. Palun proovige uuesti.");
+      return;
+    }
     setSubmitted(true);
   };
 
@@ -122,8 +151,8 @@ const BookingPage = () => {
               <input type="checkbox" required checked={form.consent} onChange={e => set("consent", e.target.checked)} className="mt-0.5" />
               Nõustun isikuandmete töötlemisega vastavalt <a href="/privaatsus" className="text-primary underline">privaatsuspoliitikale</a>.
             </label>
-            <Button type="submit" size="lg" className="w-full gap-2">
-              Saada päring <ArrowRight className="h-5 w-5" />
+            <Button type="submit" size="lg" className="w-full gap-2" disabled={loading}>
+              {loading ? <Loader2 className="h-5 w-5 animate-spin" /> : <><span>Saada päring</span> <ArrowRight className="h-5 w-5" /></>}
             </Button>
           </form>
         </div>

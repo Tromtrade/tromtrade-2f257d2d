@@ -1,16 +1,35 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Phone, X, MessageSquare } from "lucide-react";
+import { Phone, X, MessageSquare, Loader2 } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 const CallbackWidget = () => {
   const [open, setOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({ name: "", phone: "", time: "morning" });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: push to Google Sheets
-    console.log("Callback request:", form);
+    setLoading(true);
+    const params = new URLSearchParams(window.location.search);
+    const { error } = await supabase.from("leads").insert({
+      form_type: "callback",
+      name: form.name,
+      phone: form.phone,
+      callback_time: form.time,
+      consent: true,
+      page_url: window.location.pathname,
+      utm_source: params.get("utm_source") || null,
+      utm_medium: params.get("utm_medium") || null,
+      utm_campaign: params.get("utm_campaign") || null,
+    });
+    setLoading(false);
+    if (error) {
+      toast.error("Viga saatmisel. Proovige uuesti.");
+      return;
+    }
     setSubmitted(true);
     setTimeout(() => { setSubmitted(false); setOpen(false); }, 3000);
   };
@@ -75,7 +94,9 @@ const CallbackWidget = () => {
             <input type="checkbox" required className="mt-0.5 rounded border-input" />
             Nõustun isikuandmete töötlemisega
           </label>
-          <Button type="submit" className="w-full">Helista mulle</Button>
+          <Button type="submit" className="w-full" disabled={loading}>
+            {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : "Helista mulle"}
+          </Button>
         </form>
       )}
     </div>

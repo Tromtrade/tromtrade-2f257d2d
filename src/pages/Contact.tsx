@@ -1,17 +1,38 @@
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
-import { Phone, Mail, MapPin, ArrowRight } from "lucide-react";
+import { Phone, Mail, MapPin, ArrowRight, Loader2 } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 const ContactPage = () => {
   const [form, setForm] = useState({ name: "", phone: "", email: "", message: "", consent: false });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
   const set = (k: string, v: string | boolean) => setForm(f => ({ ...f, [k]: v }));
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Contact form:", form);
+    setLoading(true);
+    const params = new URLSearchParams(window.location.search);
+    const { error } = await supabase.from("leads").insert({
+      form_type: "contact",
+      name: form.name,
+      phone: form.phone,
+      email: form.email || null,
+      message: form.message || null,
+      consent: form.consent,
+      page_url: window.location.pathname,
+      utm_source: params.get("utm_source") || null,
+      utm_medium: params.get("utm_medium") || null,
+      utm_campaign: params.get("utm_campaign") || null,
+    });
+    setLoading(false);
+    if (error) {
+      toast.error("Viga saatmisel. Palun proovige uuesti.");
+      return;
+    }
     setSubmitted(true);
   };
 
@@ -75,7 +96,9 @@ const ContactPage = () => {
                     <input type="checkbox" required checked={form.consent} onChange={e => set("consent", e.target.checked)} className="mt-0.5" />
                     Nõustun <Link to="/privaatsus" className="text-primary underline">privaatsuspoliitikaga</Link>
                   </label>
-                  <Button type="submit" className="w-full gap-2">Saada sõnum <ArrowRight className="h-4 w-4" /></Button>
+                  <Button type="submit" className="w-full gap-2" disabled={loading}>
+                    {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <><span>Saada sõnum</span> <ArrowRight className="h-4 w-4" /></>}
+                  </Button>
                 </form>
               )}
             </div>
