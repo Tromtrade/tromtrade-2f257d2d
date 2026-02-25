@@ -81,6 +81,15 @@ const Footer = () => (
         </div>
       </div>
     </div>
+    {/* Trust bar */}
+    <div className="border-t border-primary-foreground/10 bg-foreground">
+      <div className="container flex flex-wrap items-center justify-center gap-4 py-3 text-xs text-primary-foreground/60">
+        <span>✓ Kohalik ettevõte Tartus</span>
+        <span>✓ Sertifitseeritud paigaldus</span>
+        <span>✓ Kiire reageerimine</span>
+        <span>✓ Garantiiga töö</span>
+      </div>
+    </div>
     <div className="border-t border-primary-foreground/10">
       <div className="container flex flex-col items-center justify-between gap-2 py-4 text-xs text-primary-foreground/40 sm:flex-row">
         <span>© {new Date().getFullYear()} Tromtrade OÜ. Kõik õigused kaitstud.</span>
