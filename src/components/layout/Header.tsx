@@ -30,26 +30,14 @@ const Header = () => {
           </div>
         </Link>
 
-        {/* EVUL Trust Badge */}
-        <a
-          href="https://evul.ee/liikmed/12314784-TROMTRADE-OU/sertifikaat"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hidden md:flex items-center gap-1.5 rounded-full border border-green-200 bg-green-50 px-3 py-1.5 text-xs font-semibold text-green-700 transition-colors hover:bg-green-100"
-          title="EVUL sertifitseeritud turvaline partner"
-        >
-          <ShieldCheck className="h-4 w-4" />
-          <span>EVUL sertifikaat</span>
-          <span className="text-yellow-500">★ 5.0</span>
-        </a>
 
-        {/* Desktop nav */}
-        <nav className="hidden items-center gap-1 lg:flex">
+        {/* Desktop nav - visible on xl+ */}
+        <nav className="hidden items-center gap-1 xl:flex">
           {navItems.map((item) => (
             <Link
               key={item.href}
               to={item.href}
-              className={`rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-secondary hover:text-secondary-foreground ${
+              className={`rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-secondary hover:text-secondary-foreground whitespace-nowrap ${
                 location.pathname === item.href ? "bg-secondary text-secondary-foreground" : "text-muted-foreground"
               }`}
             >
@@ -79,9 +67,9 @@ const Header = () => {
           <Link to="/broneeri" className="hidden md:block">
             <Button size="sm">Küsi pakkumist</Button>
           </Link>
-          <button
+            <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="rounded-md p-2 text-foreground lg:hidden hover:bg-secondary"
+            className="rounded-md p-2 text-foreground xl:hidden hover:bg-secondary"
             aria-label="Ava menüü"
           >
             {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -91,19 +79,8 @@ const Header = () => {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="border-t border-border bg-card lg:hidden">
+        <div className="border-t border-border bg-card xl:hidden">
           <nav className="container flex flex-col gap-1 py-4">
-            {/* EVUL badge mobile */}
-            <a
-              href="https://evul.ee/liikmed/12314784-TROMTRADE-OU/sertifikaat"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mb-2 flex items-center gap-1.5 rounded-lg border border-green-200 bg-green-50 px-4 py-2.5 text-sm font-semibold text-green-700"
-            >
-              <ShieldCheck className="h-4 w-4" />
-              EVUL sertifitseeritud turvaline partner
-              <span className="ml-auto text-yellow-500">★ 5.0</span>
-            </a>
             {navItems.map((item) => (
               <Link
                 key={item.href}

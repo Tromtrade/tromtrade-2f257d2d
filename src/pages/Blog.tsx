@@ -94,8 +94,8 @@ const articles: Record<string, BlogArticle> = {
         "Külmaine tase on kriitilise tähtsusega. Isegi väike leke vähendab süsteemi efektiivsust märkimisväärselt. Hoolduse käigus kontrollitakse süsteemi rõhku ja vajadusel lisatakse külmainet. Õigeaegne rõhukontroll võib säästa kallist kompressoriremonti.",
         "Külmaineleke tunnused: seade ei küta/jahuta piisavalt, kompressori tööaeg pikeneb, jäätumine soojusvahetil. Kui märkate neid sümptomeid, kutsuge spetsialist.",
       ]},
-      { heading: "Dreenisüsteem ja elektriühendused", paragraphs: [
-        "Dreenisüsteem ehk kondensaatvee äravool vajab regulaarset kontrolli. Ummistunud drenaaz võib põhjustada veeleket, hallituse kasvu ja seadme rikke. Hoolduse käigus puhastatakse dreenitorustik ja kontrollitakse selle toimivust.",
+      { heading: "Kondensaatvee äravool ja elektriühendused", paragraphs: [
+        "Kondensaatvee äravool vajab regulaarset kontrolli. Ummistunud drenaaz võib põhjustada veeleket, hallituse kasvu ja seadme rikke. Hoolduse käigus puhastatakse dreenitorustik ja kontrollitakse selle toimivust.",
         "Elektriühenduste kontroll on oluline ohutuse seisukohalt. Lõdvenenud kontaktid võivad põhjustada ülekuumenemist ja tuleohu. Professionaalse hoolduse käigus kontrollitakse kõiki elektriühendusi ja pingutakse vajadusel.",
       ]},
       { heading: "Kompressori hindamine ja hooldusprotokoll", paragraphs: [
