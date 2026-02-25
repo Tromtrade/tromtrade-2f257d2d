@@ -36,10 +36,13 @@ const Hero = () => (
             Tartu ja Lõuna-Eesti
           </motion.div>
           <h1 className="font-display text-3xl font-extrabold leading-[1.1] text-primary-foreground sm:text-4xl md:text-5xl lg:text-6xl">
-            Soojuspumbad ja kliimaseadmed — professionaalne paigaldus
+            Õhksoojuspumba paigaldus, hooldus ja remont Tartus ja Lõuna-Eestis
           </h1>
           <p className="max-w-lg text-lg text-primary-foreground/80 leading-relaxed">
-            Paigaldame, hooldame ja remondime õhk-õhk soojuspumpasid ja kliimaseadmeid. Kiire teenindus, aus hind, garantii.
+            Tromtrade OÜ on kohalik spetsialist, kes tegeleb õhksoojuspumpade ja kliimaseadmete paigalduse, hoolduse ning remondiga. Pakume usaldusväärseid lahendusi korteritele, eramajadele ja äripindadele.
+          </p>
+          <p className="max-w-lg text-base text-primary-foreground/70 leading-relaxed">
+            Meie eesmärk on pakkuda tehniliselt korrektset, energiatõhusat ja pika elueaga lahendust, mis töötab Eesti kliimas.
           </p>
           <motion.div
             className="flex flex-wrap gap-3"

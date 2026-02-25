@@ -16,6 +16,7 @@ const About = lazy(() => import("./pages/About"));
 const Pricing = lazy(() => import("./pages/Pricing"));
 const Projects = lazy(() => import("./pages/Projects"));
 const Blog = lazy(() => import("./pages/Blog"));
+const BlogArticle = lazy(() => import("./pages/Blog").then(m => ({ default: m.BlogArticlePage })));
 const Privacy = lazy(() => import("./pages/Privacy"));
 
 const Installation = lazy(() => import("./pages/services/Installation"));
@@ -49,6 +50,7 @@ const App = () => (
             <Route path="/hinnakiri" element={<Pricing />} />
             <Route path="/tehtud-tood" element={<Projects />} />
             <Route path="/blogi" element={<Blog />} />
+            <Route path="/blogi/:slug" element={<BlogArticle />} />
             <Route path="/privaatsus" element={<Privacy />} />
             <Route path="/ohksoojuspumba-paigaldus-tartu" element={<Installation />} />
             <Route path="/ohksoojuspumba-hooldus-tartu" element={<Maintenance />} />
