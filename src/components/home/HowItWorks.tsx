@@ -1,19 +1,20 @@
-import { MessageSquare, ClipboardCheck, Wrench } from "lucide-react";
+import { MessageSquare, ClipboardCheck, Wrench, CheckCircle } from "lucide-react";
 
 const steps = [
-  { icon: MessageSquare, num: "1", title: "Võtke ühendust", desc: "Täitke hinnapäringu vorm või helistage. Vastame 24 tunni jooksul." },
-  { icon: ClipboardCheck, num: "2", title: "Ülevaatus ja pakkumine", desc: "Hindame objekti, soovitame sobiva seadme ja esitame selge pakkumise." },
-  { icon: Wrench, num: "3", title: "Paigaldus ja seadistus", desc: "Paigaldame seadme professionaalselt, seadistame ja juhendame kasutamist." },
+  { icon: MessageSquare, num: "1", title: "Esita päring või helista", desc: "Võtke ühendust telefoni, WhatsAppi või vormi kaudu." },
+  { icon: ClipboardCheck, num: "2", title: "Selgitame vajaduse ja teeme pakkumise", desc: "Hindame objekti ja koostame selge hinnapakkumise." },
+  { icon: Wrench, num: "3", title: "Teostame paigalduse või hoolduse kokkulepitud ajal", desc: "Professionaalne töö kokkulepitud ajal ja kohas." },
+  { icon: CheckCircle, num: "4", title: "Anname üle kontrollitud ja testitud süsteemi", desc: "Seade on seadistatud, testitud ja valmis kasutamiseks." },
 ];
 
 const HowItWorks = () => (
   <section className="surface-warm py-16 md:py-24">
     <div className="container">
       <div className="mx-auto max-w-2xl text-center mb-12">
-        <h2 className="font-display text-3xl font-extrabold text-foreground md:text-4xl">Kuidas see käib?</h2>
+        <h2 className="font-display text-3xl font-extrabold text-foreground md:text-4xl">Kuidas tööprotsess käib?</h2>
         <p className="mt-3 text-muted-foreground">Lihtne ja läbipaistev protsess algusest lõpuni.</p>
       </div>
-      <div className="grid gap-8 md:grid-cols-3">
+      <div className="grid gap-8 md:grid-cols-4">
         {steps.map((step) => (
           <div key={step.num} className="relative flex flex-col items-center text-center">
             <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl hero-gradient shadow-lg shadow-primary/20">

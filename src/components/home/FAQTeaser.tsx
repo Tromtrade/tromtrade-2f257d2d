@@ -1,10 +1,9 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const faqs = [
-  { q: "Kui palju maksab soojuspumba paigaldus?", a: "Paigalduse hind sõltub seadme tüübist, ruumi suurusest ja paigaldustingimustest. Standardpaigalduse hind algab 390€-st. Küsige personaalset pakkumist!" },
-  { q: "Kui kaua võtab paigaldus aega?", a: "Standardne ühe siseseadme paigaldus võtab aega 4–8 tundi. Keerukamate lahenduste puhul planeerime tööd mitme päeva peale." },
-  { q: "Kas soojuspump töötab ka talvel?", a: "Jah, kaasaegsed õhk-õhk soojuspumbad töötavad efektiivselt kuni -25°C juures. Soovitame kvaliteetseid brände nagu Panasonic ja Cooper&Hunter." },
-  { q: "Kui tihti peab soojuspumpa hooldama?", a: "Soovitame hooldust vähemalt kord aastas. Regulaarne hooldus pikendab seadme eluiga ja hoiab energiatõhususe kõrgel." },
+  { q: "Kui kaua paigaldus kestab?", a: "Enamasti 1 tööpäev." },
+  { q: "Kas hooldus on vajalik igal aastal?", a: "Soovitame vähemalt kord aastas, et säilitada efektiivsus." },
+  { q: "Kas teostate ka remonti?", a: "Jah, tegeleme rikete diagnostika ja parandusega." },
 ];
 
 const FAQTeaser = () => (
@@ -28,6 +27,22 @@ const FAQTeaser = () => (
         </Accordion>
       </div>
     </div>
+
+    {/* FAQ Schema */}
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqs.map(f => ({
+            "@type": "Question",
+            "name": f.q,
+            "acceptedAnswer": { "@type": "Answer", "text": f.a },
+          })),
+        }),
+      }}
+    />
   </section>
 );
 

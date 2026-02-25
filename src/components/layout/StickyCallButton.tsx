@@ -1,4 +1,6 @@
-import { Phone } from "lucide-react";
+import { Phone, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 const StickyCallButton = () => (
   <>
@@ -6,10 +8,18 @@ const StickyCallButton = () => (
     <a
       href="tel:+37255644610"
       className="fixed bottom-4 right-4 z-50 flex h-14 w-14 items-center justify-center rounded-full accent-gradient shadow-lg shadow-accent/30 transition-transform hover:scale-110 md:hidden"
-      aria-label="Helista"
+      aria-label="Helista kohe"
     >
       <Phone className="h-6 w-6 text-accent-foreground" />
     </a>
+    {/* "Küsi pakkumist" button */}
+    <Link
+      to="/broneeri"
+      className="fixed bottom-4 left-4 z-50 flex h-14 items-center gap-2 rounded-full hero-gradient px-5 shadow-lg shadow-primary/30 transition-transform hover:scale-105 md:hidden"
+    >
+      <ArrowRight className="h-5 w-5 text-primary-foreground" />
+      <span className="text-sm font-bold text-primary-foreground">Küsi pakkumist</span>
+    </Link>
     {/* WhatsApp button */}
     <a
       href="https://wa.me/37255644610"

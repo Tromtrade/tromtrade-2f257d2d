@@ -40,8 +40,8 @@ const ContactPage = () => {
     <Layout>
       <section className="hero-gradient py-12">
         <div className="container text-center">
-          <h1 className="font-display text-3xl font-extrabold text-primary-foreground md:text-4xl">Kontakt</h1>
-          <p className="mt-2 text-primary-foreground/80">Võtke meiega julgelt ühendust!</p>
+          <h1 className="font-display text-3xl font-extrabold text-primary-foreground md:text-4xl">Võta ühendust Tromtrade'iga</h1>
+          <p className="mt-2 text-primary-foreground/80">Telefon: +372 5564 4610 · Email: info@tromtrade.ee · Teeninduspiirkond: Tartu ja Lõuna-Eesti</p>
         </div>
       </section>
       <section className="py-12">
