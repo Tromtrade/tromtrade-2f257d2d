@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Phone } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { useEffect } from "react";
+import { useEffect, ReactNode } from "react";
 
 interface ServiceLandingProps {
   title: string;
@@ -20,9 +20,11 @@ interface ServiceLandingProps {
   priceRange?: string;
   faqs: { q: string; a: string }[];
   ctaLabel?: string;
+  additionalContent?: ReactNode;
+  mapEmbed?: string;
 }
 
-const ServiceLanding = ({ title, metaDescription, h1, description, benefits, benefitsTitle, process, processTitle, included, notIncluded, priceNote, priceRange, faqs, ctaLabel }: ServiceLandingProps) => {
+const ServiceLanding = ({ title, metaDescription, h1, description, benefits, benefitsTitle, process, processTitle, included, notIncluded, priceNote, priceRange, faqs, ctaLabel, additionalContent, mapEmbed }: ServiceLandingProps) => {
   useEffect(() => {
     document.title = title;
     const metaEl = document.querySelector('meta[name="description"]');
@@ -31,6 +33,26 @@ const ServiceLanding = ({ title, metaDescription, h1, description, benefits, ben
 
   return (
     <Layout>
+      {/* Breadcrumb */}
+      <nav className="container py-3 text-xs text-muted-foreground" aria-label="Breadcrumb">
+        <ol className="flex items-center gap-1" itemScope itemType="https://schema.org/BreadcrumbList">
+          <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+            <Link to="/" itemProp="item" className="hover:text-primary"><span itemProp="name">Avaleht</span></Link>
+            <meta itemProp="position" content="1" />
+          </li>
+          <li className="mx-1">/</li>
+          <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+            <Link to="/teenused" itemProp="item" className="hover:text-primary"><span itemProp="name">Teenused</span></Link>
+            <meta itemProp="position" content="2" />
+          </li>
+          <li className="mx-1">/</li>
+          <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+            <span itemProp="name" className="text-foreground font-medium">{h1}</span>
+            <meta itemProp="position" content="3" />
+          </li>
+        </ol>
+      </nav>
+
       <section className="hero-gradient py-12">
         <div className="container">
           <h1 className="font-display text-3xl font-extrabold text-primary-foreground md:text-4xl max-w-3xl">{h1}</h1>
@@ -39,12 +61,18 @@ const ServiceLanding = ({ title, metaDescription, h1, description, benefits, ben
             <Link to="/broneeri"><Button variant="accent" size="lg" className="gap-2">{ctaLabel || "Küsi pakkumist"} <ArrowRight className="h-5 w-5" /></Button></Link>
             <a href="tel:+37255644610"><Button variant="hero-outline" size="lg" className="gap-2"><Phone className="h-5 w-5" /> Helista kohe</Button></a>
           </div>
+          {/* Conversion triggers */}
+          <div className="mt-4 flex flex-wrap gap-4 text-sm text-primary-foreground/70">
+            <span>✓ Tasuta konsultatsioon</span>
+            <span>✓ Kiire vastus 24h jooksul</span>
+            <span>✓ Kohalik spetsialist Tartus</span>
+            <span>✓ Garantiiga töö</span>
+          </div>
         </div>
       </section>
 
       <section className="py-12">
         <div className="container max-w-4xl space-y-12">
-          {/* Benefits / Included list */}
           {benefits && benefits.length > 0 && (
             <div>
               <h2 className="font-display text-2xl font-bold text-foreground">{benefitsTitle || "Miks valida meid?"}</h2>
@@ -59,7 +87,6 @@ const ServiceLanding = ({ title, metaDescription, h1, description, benefits, ben
             </div>
           )}
 
-          {/* Process */}
           {process && process.length > 0 && (
             <div>
               <h2 className="font-display text-2xl font-bold text-foreground">{processTitle || "Tööprotsess"}</h2>
@@ -74,25 +101,26 @@ const ServiceLanding = ({ title, metaDescription, h1, description, benefits, ben
             </div>
           )}
 
-          {/* Included/Not */}
           {(included || notIncluded) && (
             <div className="grid gap-6 md:grid-cols-2">
               {included && (
                 <div className="rounded-xl border border-border bg-card p-6">
                   <h3 className="font-display font-bold text-foreground mb-3">Hind sisaldab</h3>
-                  <ul className="space-y-2">{included.map(i => <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground"><span className="text-primary">✓</span>{i}</li>)}</ul>
+                  <ul className="space-y-2">{included.map(item => <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground"><span className="text-primary">✓</span>{item}</li>)}</ul>
                 </div>
               )}
               {notIncluded && (
                 <div className="rounded-xl border border-border bg-card p-6">
                   <h3 className="font-display font-bold text-foreground mb-3">Ei sisalda</h3>
-                  <ul className="space-y-2">{notIncluded.map(i => <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground"><span className="text-accent">✕</span>{i}</li>)}</ul>
+                  <ul className="space-y-2">{notIncluded.map(item => <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground"><span className="text-accent">✕</span>{item}</li>)}</ul>
                 </div>
               )}
             </div>
           )}
 
-          {/* Price */}
+          {/* Additional long-form content */}
+          {additionalContent}
+
           {priceRange && (
             <div className="rounded-xl hero-gradient p-6 text-center">
               {priceNote && <p className="text-primary-foreground/80 text-sm mb-1">{priceNote}</p>}
@@ -101,6 +129,11 @@ const ServiceLanding = ({ title, metaDescription, h1, description, benefits, ben
               <Link to="/broneeri" className="mt-4 inline-block"><Button variant="accent" className="gap-2">Küsi täpset hinda <ArrowRight className="h-4 w-4" /></Button></Link>
             </div>
           )}
+
+          {/* Urgency bar */}
+          <div className="rounded-lg border border-accent/30 bg-accent/5 p-4 text-center">
+            <p className="text-sm font-semibold text-foreground">⚡ Hooldusperiood enne talve täitub kiiresti — broneeri aeg varakult!</p>
+          </div>
 
           {/* FAQ */}
           <div>
@@ -114,10 +147,31 @@ const ServiceLanding = ({ title, metaDescription, h1, description, benefits, ben
               ))}
             </Accordion>
           </div>
+
+          {/* Map embed */}
+          {mapEmbed && (
+            <div className="rounded-xl border border-border overflow-hidden">
+              <iframe src={mapEmbed} className="w-full h-64" loading="lazy" title="Teeninduspiirkond kaardil" />
+            </div>
+          )}
+
+          {/* Internal links */}
+          <div className="rounded-xl border border-border bg-card p-6">
+            <h3 className="font-display font-bold text-foreground mb-3">Seotud teenused ja artiklid</h3>
+            <div className="grid gap-2 sm:grid-cols-2">
+              <Link to="/ohksoojuspumba-paigaldus-tartu" className="text-sm text-primary hover:underline">→ Õhksoojuspumba paigaldus Tartus</Link>
+              <Link to="/ohksoojuspumba-hooldus-tartu" className="text-sm text-primary hover:underline">→ Soojuspumba hooldus</Link>
+              <Link to="/ohksoojuspumba-remont-tartu" className="text-sm text-primary hover:underline">→ Soojuspumba remont</Link>
+              <Link to="/kalkulaator" className="text-sm text-primary hover:underline">→ Säästu kalkulaator</Link>
+              <Link to="/blogi/soojuspumba-valik-tartu-kliimas" className="text-sm text-primary hover:underline">→ Kuidas valida õhksoojuspumpa</Link>
+              <Link to="/blogi/soojuspump-vs-elektrikute" className="text-sm text-primary hover:underline">→ Soojuspump vs elektriküte</Link>
+              <Link to="/kontakt" className="text-sm text-primary hover:underline">→ Võta ühendust</Link>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Schema JSON-LD: Service + FAQ */}
+      {/* Schema JSON-LD: Service + FAQ + BreadcrumbList */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -133,6 +187,11 @@ const ServiceLanding = ({ title, metaDescription, h1, description, benefits, ben
                 "email": "info@tromtrade.ee",
                 "areaServed": [
                   { "@type": "City", "name": "Tartu" },
+                  { "@type": "City", "name": "Elva" },
+                  { "@type": "City", "name": "Võru" },
+                  { "@type": "City", "name": "Põlva" },
+                  { "@type": "City", "name": "Viljandi" },
+                  { "@type": "City", "name": "Jõgeva" },
                   { "@type": "State", "name": "Lõuna-Eesti" },
                 ],
               },
