@@ -9,7 +9,7 @@ const Footer = () => (
         {/* Brand */}
         <div className="space-y-4">
           <div className="flex items-center gap-2">
-            <img src={logo} alt="Tromtrade" className="h-12 object-contain brightness-0 invert" />
+            <img src={logo} alt="Tromtrade" className="h-12 object-contain" />
           </div>
           <p className="text-sm text-primary-foreground/70 leading-relaxed">
             Professionaalne õhk-õhk soojuspumpade ja kliimaseadmete paigaldus, hooldus ja remont Tartus ja Lõuna-Eestis.
