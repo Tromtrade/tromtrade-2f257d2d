@@ -13,7 +13,7 @@ const services = [
     icon: Settings,
     title: "Hooldus",
     desc: "Regulaarne hooldus pikendab seadme eluiga ja hoiab efektiivsuse kõrgel. Sisaldab filtrite puhastust, soojusvaheti pesu ja kondensaatvee äravoolu kontrolli.",
-    price: "70€",
+    price: "80€",
     href: "/ohksoojuspumba-hooldus-tartu",
   },
   {

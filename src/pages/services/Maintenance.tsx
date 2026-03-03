@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const MaintenancePage = () => (
   <ServiceLanding
     title="Õhksoojuspumba hooldus Tartus | Regulaarne hooldus | Tromtrade OÜ"
-    metaDescription="Professionaalne soojuspumba hooldus Tartus. Pikenda seadme eluiga, säästa energiakuludelt ja hoia garantii kehtivana. Alates 70€."
+    metaDescription="Professionaalne soojuspumba hooldus Tartus. Pikenda seadme eluiga, säästa energiakuludelt ja hoia garantii kehtivana. Alates 80€."
     h1="Õhksoojuspumba hooldus Tartus"
     description="Regulaarne hooldus pikendab seadme eluiga kuni 50%, vähendab energiakulu ja hoiab ära kulukad rikked. Tromtrade OÜ teostab professionaalset soojuspumba hooldust Tartus ja kogu Lõuna-Eestis."
     benefitsTitle="Miks on regulaarne hooldus oluline?"
@@ -37,7 +37,7 @@ const MaintenancePage = () => (
       "Varuosad (vajadusel)",
     ]}
     priceNote="Mitme seadme hooldamisel pakume soodustust."
-    priceRange="70€"
+    priceRange="80€"
     ctaLabel="Broneeri hooldus"
     additionalContent={
       <div className="space-y-8">
@@ -78,7 +78,7 @@ const MaintenancePage = () => (
       { q: "Kas hooldus on kohustuslik?", a: "Garantii kehtivuse jaoks on regulaarne hooldus enamasti kohustuslik. Lisaks pikendab see seadme eluiga oluliselt." },
       { q: "Kas saan mitut seadet korraga hooldada?", a: "Jah, mitme seadme puhul pakume soodustust. See on ka ajaliselt efektiivsem." },
       { q: "Kas hooldamata seade läheb kiiremini katki?", a: "Jah, regulaarne hooldus pikendab seadme eluiga kuni 50% ja ennetab kulukaid rikkeid." },
-      { q: "Kui palju maksab hooldus?", a: "Regulaarse hoolduse hind algab 70€-st. Keemiline soojusvaheti pesu algab 110€-st. Mitme seadme puhul pakume soodustust." },
+      { q: "Kui palju maksab hooldus?", a: "Regulaarse hoolduse hind algab 80€-st. Keemiline soojusvaheti pesu algab 110€-st. Mitme seadme puhul pakume soodustust." },
     ]}
     mapEmbed="https://maps.google.com/maps?q=Tartu+linn,+Estonia&t=&z=12&ie=UTF8&iwloc=&output=embed"
   />
