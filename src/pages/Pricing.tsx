@@ -21,7 +21,7 @@ const PricingPage = () => (
     <section className="hero-gradient py-12">
       <div className="container text-center">
         <h1 className="font-display text-3xl font-extrabold text-primary-foreground md:text-4xl">Hinnakiri</h1>
-        <p className="mt-2 text-primary-foreground/80">Kõik hinnad sisaldavad 22% käibemaksu.</p>
+        <p className="mt-2 text-primary-foreground/80">Kõik hinnad sisaldavad 24% käibemaksu.</p>
       </div>
     </section>
     <section className="py-12">
