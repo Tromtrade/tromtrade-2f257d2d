@@ -23,7 +23,7 @@ const Header = () => {
     <header className="sticky top-0 z-50 border-b border-border bg-card/95 backdrop-blur-md">
       <div className="container flex h-16 items-center justify-between md:h-20">
         <Link to="/" className="flex items-center gap-2">
-          <img src={logo} alt="Tromtrade OÜ logo" className="h-12 md:h-16 object-contain" />
+          <img src={logo} alt="Tromtrade OÜ logo" className="h-14 md:h-20 object-contain" />
         </Link>
 
 
