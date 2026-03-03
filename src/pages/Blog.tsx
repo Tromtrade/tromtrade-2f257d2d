@@ -71,7 +71,7 @@ const articles: Record<string, BlogArticle> = {
     pillarHref: "/ohksoojuspumba-hooldus-tartu",
     relatedSlugs: ["soojuspumba-eluiga-pikendamine", "levinumad-veakoodid"],
     faqs: [
-      { q: "Kui palju maksab soojuspumba hooldus?", a: "Tromtrade'i korralise hoolduse hind algab 70€-st. Mitme seadme puhul pakume soodustust." },
+      { q: "Kui palju maksab soojuspumba hooldus?", a: "Tromtrade'i korralise hoolduse hind algab 80€-st. Mitme seadme puhul pakume soodustust." },
       { q: "Kas filtrite puhastamist saab ise teha?", a: "Jah, filtrite puhastamine on lihtne toiming. Soojusvaheti keemiline pesu vajab aga professionaali." },
       { q: "Kas hooldamata seade läheb kiiremini katki?", a: "Jah, regulaarne hooldus pikendab seadme eluiga kuni 50% ja ennetab kulukaid rikkeid." },
     ],
@@ -104,7 +104,7 @@ const articles: Record<string, BlogArticle> = {
       ]},
       { heading: "Optimaalne hooldustsükkel", paragraphs: [
         "Optimaalne hooldustsükkel on kord aastas – soovitavalt kevadel enne jahutushooaega. Intensiivsema kasutuse korral (nt äripinnad, allergiaga inimeste kodud) võib kahekordne hooldus olla mõistlik.",
-        "Kokkuvõttes: regulaarne hooldus maksab end mitmekordelt tagasi läbi vähenenud energiakulu, pikema eluea ja välditud remondikulude. 70€ hooldus võib säästa sadu eurosid aastas. Broneeri hooldus juba täna!",
+        "Kokkuvõttes: regulaarne hooldus maksab end mitmekordelt tagasi läbi vähenenud energiakulu, pikema eluea ja välditud remondikulude. 80€ hooldus võib säästa sadu eurosid aastas. Broneeri hooldus juba täna!",
       ]},
     ],
   },

@@ -5,7 +5,7 @@ import { ArrowRight, Phone } from "lucide-react";
 
 const priceRows = [
   { service: "Õhk-õhk soojuspumba standardpaigaldus", desc: "Sise- ja välisosa vaheline torustik koos sidekaabli ja kondensaatvee voolikuga kuni 5m. Ilukarbik torustiku katmiseks kuni 2m. Kliimaseadme välisosa seinakonsool + vibratsioonipuksid. Ø65 mm ava puurimine välisseina kuni 50cm (va. punane tellis, paas, betoon, palk üle 30cm ja maakivi).", unit: "tk", price: "390€" },
-  { service: "Õhk-õhk soojuspumba korraline hooldus", desc: "", unit: "tk", price: "70€" },
+  { service: "Õhk-õhk soojuspumba korraline hooldus", desc: "", unit: "tk", price: "80€" },
   { service: "Õhk-õhk soojuspumba demontaaž ja utiliseerimine", desc: "", unit: "tk", price: "70€" },
   { service: "Väljakutse objektile kuni 50km Tartust", desc: "", unit: "tk", price: "40€" },
   { service: "Külmaine kaalumine", desc: "", unit: "tk", price: "60€" },
