@@ -534,8 +534,16 @@ const BlogArticlePage = () => {
               "@context": "https://schema.org",
               "@type": "Article",
               "headline": article.title,
-              "author": { "@type": "Organization", "name": "Tromtrade OÜ" },
-              "publisher": { "@type": "Organization", "name": "Tromtrade OÜ" },
+              "description": article.metaDesc,
+              "author": { "@type": "Organization", "name": "Tromtrade OÜ", "url": "https://tromtrade.ee" },
+              "publisher": { "@type": "Organization", "name": "Tromtrade OÜ", "url": "https://tromtrade.ee" },
+              "datePublished": "2025-01-15",
+              "dateModified": "2025-06-01",
+              "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": `https://tromtrade.ee/blogi/${slug}`,
+              },
+              "inLanguage": "et",
             },
             {
               "@context": "https://schema.org",

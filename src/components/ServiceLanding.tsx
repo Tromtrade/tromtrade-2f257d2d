@@ -192,13 +192,9 @@ const ServiceLanding = ({ title, metaDescription, h1, description, benefits, ben
                   { "@type": "City", "name": "Põlva" },
                   { "@type": "City", "name": "Viljandi" },
                   { "@type": "City", "name": "Jõgeva" },
-                  { "@type": "State", "name": "Lõuna-Eesti" },
-                ],
-              },
-              "areaServed": [
-                { "@type": "City", "name": "Tartu" },
                 { "@type": "State", "name": "Lõuna-Eesti" },
               ],
+            },
             },
             {
               "@context": "https://schema.org",
