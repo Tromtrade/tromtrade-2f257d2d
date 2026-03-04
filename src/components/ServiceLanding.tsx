@@ -155,6 +155,39 @@ const ServiceLanding = ({ title, metaDescription, h1, description, benefits, ben
             </div>
           )}
 
+          {/* Partner logos & credentials */}
+          <div className="rounded-xl border border-border bg-card p-6">
+            <h3 className="font-display font-bold text-foreground mb-4">Volitatud partner ja registreeringud</h3>
+            <div className="flex flex-wrap items-center justify-center gap-8">
+              <div className="flex flex-col items-center gap-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Panasonic_logo_%28Blue%29.svg/320px-Panasonic_logo_%28Blue%29.svg.png" alt="Panasonic ametlik partner" className="h-8 object-contain grayscale hover:grayscale-0 transition-all" loading="lazy" />
+                <span className="text-xs text-muted-foreground">Ametlik partner</span>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Samsung_Logo.svg/320px-Samsung_Logo.svg.png" alt="Samsung ametlik partner" className="h-8 object-contain grayscale hover:grayscale-0 transition-all" loading="lazy" />
+                <span className="text-xs text-muted-foreground">Ametlik partner</span>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <div className="flex items-center justify-center h-8 px-3 rounded bg-muted">
+                  <span className="font-bold text-sm text-foreground tracking-wide">Cooper&Hunter</span>
+                </div>
+                <span className="text-xs text-muted-foreground">Ametlik partner</span>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <div className="flex items-center justify-center h-8 px-3 rounded border border-primary/30 bg-primary/5">
+                  <span className="font-bold text-xs text-primary">MTR</span>
+                </div>
+                <span className="text-xs text-muted-foreground">MTR registreering</span>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <div className="flex items-center justify-center h-8 px-3 rounded border border-primary/30 bg-primary/5">
+                  <span className="font-bold text-xs text-primary">F-GAAS</span>
+                </div>
+                <span className="text-xs text-muted-foreground">F-gaasi pädevus</span>
+              </div>
+            </div>
+          </div>
+
           {/* Internal links */}
           <div className="rounded-xl border border-border bg-card p-6">
             <h3 className="font-display font-bold text-foreground mb-3">Seotud teenused ja artiklid</h3>
