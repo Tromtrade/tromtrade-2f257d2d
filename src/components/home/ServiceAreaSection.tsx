@@ -5,9 +5,6 @@ const cities = [
   { name: "Tartu", href: "/ohksoojuspumba-paigaldus-tartu" },
   { name: "Elva", href: "/ohksoojuspumba-paigaldus-elva" },
   { name: "Võru", href: "/ohksoojuspumba-paigaldus-voru" },
-  { name: "Põlva", href: null },
-  { name: "Viljandi", href: null },
-  { name: "Jõgeva", href: null },
 ];
 
 const ServiceAreaSection = () => (
