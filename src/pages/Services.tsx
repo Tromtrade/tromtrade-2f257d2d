@@ -6,7 +6,7 @@ import { ArrowRight, Thermometer, Settings, Wrench, Wind, ArrowRightLeft } from 
 const services = [
   { icon: Thermometer, title: "Õhk-õhk soojuspumba paigaldus", desc: "Professionaalne soojuspumba paigaldus Tartus ja Lõuna-Eestis. Aitame valida õige seadme ja teostame täislahenduse.", href: "/ohksoojuspumba-paigaldus-tartu", price: "alates 390€" },
   { icon: Settings, title: "Soojuspumba hooldus", desc: "Regulaarne hooldus tagab seadme pikaealisuse ja energiatõhususe. Kiire ja asjatundlik teenus.", href: "/ohksoojuspumba-hooldus-tartu", price: "alates 80€" },
-  { icon: Wrench, title: "Soojuspumba remont", desc: "Rikete diagnoosimine ja remont. Väljakutsed Tartus ja lähiümbruses, kiire reageerimine.", href: "/ohksoojuspumba-remont-tartu", price: "alates 79€" },
+  { icon: Wrench, title: "Soojuspumba remont", desc: "Rikete diagnoosimine ja remont. Väljakutsed Tartus ja lähiümbruses, kiire reageerimine.", href: "/ohksoojuspumba-remont-tartu", price: "alates 60€" },
   { icon: Wind, title: "Kliimaseadme paigaldus", desc: "Jahutus- ja kliimaseadmete paigaldus kodudesse, kontoritesse ja äriruumidesse.", href: "/kliimaseadme-paigaldus-tartu", price: "alates 390€" },
   { icon: ArrowRightLeft, title: "Seadmete ümberpaigaldus ja utiliseerimine", desc: "Olemasoleva seadme demonteerimine, teisaldamine ja uuesti paigaldamine.", href: "/seadmete-umberpaigaldus-ja-utiliseerimine", price: "küsi hinda" },
 ];
