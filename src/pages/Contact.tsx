@@ -83,7 +83,8 @@ const ContactPage = () => {
                 <div className="rounded-xl border border-border bg-card p-8 text-center">
                   <div className="text-5xl mb-4">✅</div>
                   <h3 className="font-display text-xl font-bold text-foreground">Sõnum saadetud!</h3>
-                  <p className="mt-2 text-muted-foreground">Vastame esimesel võimalusel.</p>
+                  <p className="mt-2 text-muted-foreground">Vastame teile 24 tunni jooksul.</p>
+                  <p className="mt-1 text-sm text-muted-foreground/70">Kui teil on kiire, helistage <a href="tel:+37255644610" className="text-primary underline">5564 4610</a>.</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4 rounded-xl border border-border bg-card p-6">

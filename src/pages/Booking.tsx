@@ -62,7 +62,8 @@ const BookingPage = () => {
         <div className="container py-24 text-center">
           <div className="text-5xl mb-4">✅</div>
           <h1 className="font-display text-3xl font-extrabold text-foreground">Täname!</h1>
-          <p className="mt-3 text-muted-foreground">Oleme teie päringu kätte saanud ja võtame ühendust 24 tunni jooksul.</p>
+          <p className="mt-3 text-muted-foreground">Vastame teile 24 tunni jooksul ja saadame esmase pakkumise e-mailile.</p>
+          <p className="mt-1 text-sm text-muted-foreground/70">Kui teil on kiire, helistage <a href="tel:+37255644610" className="text-primary underline">5564 4610</a>.</p>
         </div>
       </Layout>
     );
