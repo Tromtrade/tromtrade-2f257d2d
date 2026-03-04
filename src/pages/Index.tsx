@@ -7,7 +7,6 @@ import GallerySection from "@/components/home/Gallery";
 import FAQTeaser from "@/components/home/FAQTeaser";
 import CTASection from "@/components/home/CTASection";
 import CallbackWidget from "@/components/forms/CallbackWidget";
-import ServiceAreaSection from "@/components/home/ServiceAreaSection";
 import ExpertiseSection from "@/components/home/ExpertiseSection";
 
 const Index = () => (
@@ -18,7 +17,7 @@ const Index = () => (
     <HowItWorks />
     <ExpertiseSection />
     <GallerySection />
-    <ServiceAreaSection />
+    
     <FAQTeaser />
     <CTASection />
     <CallbackWidget />
