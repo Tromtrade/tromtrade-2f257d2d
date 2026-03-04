@@ -61,7 +61,7 @@ const CallbackWidget = () => {
         <div className="p-6 text-center">
           <div className="text-2xl mb-2">✅</div>
           <p className="font-semibold text-foreground">Täname!</p>
-          <p className="text-sm text-muted-foreground">Helistame teile tagasi esimesel võimalusel.</p>
+          <p className="text-sm text-muted-foreground">Vastame teile 24 tunni jooksul.</p>
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-3 p-4">
