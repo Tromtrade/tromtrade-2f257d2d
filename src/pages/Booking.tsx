@@ -5,7 +5,7 @@ import { ArrowRight, Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 
-const serviceTypes = ["Paigaldus", "Hooldus", "Remont", "Kliimaseade", "Ümberpaigaldus"];
+const serviceTypes = ["Paigaldus", "Hooldus", "Remont", "Defekteerimine", "Ümberpaigaldus"];
 const propertyTypes = ["Korter", "Maja", "Kontor", "Muu"];
 const heatingTypes = ["Elektriradiaator", "Vana soojuspump", "Keskküte", "Muu"];
 const brands = ["Panasonic", "Cooper&Hunter", "Muu", "Pole kindel"];
