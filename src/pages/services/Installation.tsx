@@ -25,7 +25,7 @@ const InstallationPage = () => (
     ]}
     included={[
       "Sise- ja välisseadme paigaldus",
-      "Torustik kuni 3m",
+      "Torustik kuni 5m",
       "Elektriühendus kuni 1,5 m välisseadmest",
       "Vakumeerimine ja lekke kontroll",
       "Testkäivitus ja seadistamine",
@@ -33,7 +33,7 @@ const InstallationPage = () => (
     ]}
     notIncluded={[
       "Seadme maksumus (eraldi)",
-      "Torustik üle 3m (lisatasu)",
+      "Torustik üle 5m (lisatasu)",
       "Lisaelektritööd (vajadusel)",
     ]}
     priceNote="Paigalduse hind sõltub objekti eripärast ja torustiku pikkusest."
@@ -58,7 +58,7 @@ const InstallationPage = () => (
         </div>
         <div>
           <h3 className="font-display text-xl font-bold text-foreground">Kui palju maksab õhksoojuspumba paigaldus Tartus?</h3>
-          <p className="mt-2 text-muted-foreground leading-relaxed">Standardpaigalduse hind algab 390€-st ja sisaldab sise- ning välisseadme paigaldust, torustikku kuni 3m ja seadistamist. Täpne hind sõltub torustiku pikkusest, seadme tüübist ja paigaldustingimustest. <Link to="/broneeri" className="text-primary font-semibold hover:underline">Küsige personaalset pakkumist</Link>.</p>
+          <p className="mt-2 text-muted-foreground leading-relaxed">Standardpaigalduse hind algab 390€-st ja sisaldab sise- ning välisseadme paigaldust, torustikku kuni 5m ja seadistamist. Täpne hind sõltub torustiku pikkusest, seadme tüübist ja paigaldustingimustest. <Link to="/broneeri" className="text-primary font-semibold hover:underline">Küsige personaalset pakkumist</Link>.</p>
         </div>
         <div>
           <h3 className="font-display text-xl font-bold text-foreground">Paigaldus korterisse vs eramajja</h3>

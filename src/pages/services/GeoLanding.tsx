@@ -31,7 +31,7 @@ const GeoInstallPage = ({ city, cityGenitive }: GeoLandingProps) => (
     ]}
     included={[
       "Sise- ja välisseadme paigaldus",
-      "Torustik kuni 3m",
+      "Torustik kuni 5m",
       "Elektriühendus kuni 1,5 m välisseadmest",
       "Vakumeerimine ja lekke kontroll",
       "Testkäivitus ja seadistamine",
@@ -39,7 +39,7 @@ const GeoInstallPage = ({ city, cityGenitive }: GeoLandingProps) => (
     ]}
     notIncluded={[
       "Seadme maksumus (eraldi)",
-      "Torustik üle 3m",
+      "Torustik üle 5m",
       "Lisaelektritööd",
     ]}
     priceNote={`Paigalduse hind ${cityGenitive} sõltub objekti eripärast ja torustiku pikkusest.`}
@@ -56,7 +56,7 @@ const GeoInstallPage = ({ city, cityGenitive }: GeoLandingProps) => (
         </div>
         <div>
           <h3 className="font-display text-xl font-bold text-foreground">Kui palju maksab õhksoojuspumba paigaldus {cityGenitive}?</h3>
-          <p className="mt-2 text-muted-foreground leading-relaxed">Standardpaigalduse hind algab 390€-st ja sisaldab sise- ning välisseadme paigaldust, torustikku kuni 3m ja seadistamist. Täpne hind sõltub torustiku pikkusest, seadme tüübist ja paigaldustingimustest. <Link to="/broneeri" className="text-primary font-semibold hover:underline">Küsige personaalset pakkumist</Link>.</p>
+          <p className="mt-2 text-muted-foreground leading-relaxed">Standardpaigalduse hind algab 390€-st ja sisaldab sise- ning välisseadme paigaldust, torustikku kuni 5m ja seadistamist. Täpne hind sõltub torustiku pikkusest, seadme tüübist ja paigaldustingimustest. <Link to="/broneeri" className="text-primary font-semibold hover:underline">Küsige personaalset pakkumist</Link>.</p>
         </div>
         <div>
           <h3 className="font-display text-xl font-bold text-foreground">Kas õhksoojuspump töötab –25 kraadiga?</h3>
