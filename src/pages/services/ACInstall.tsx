@@ -6,8 +6,8 @@ const ACInstallPage = () => (
     description="Jahutus- ja kliimaseadmete professionaalne paigaldus kodudesse, kontoritesse ja äriruumidesse."
     benefits={["Jahutus ja küte ühes seadmes", "Energiatõhus lahendus", "Professionaalne paigaldus", "Kõik brändid", "Garantii"]}
     process={["Konsultatsioon ja ruumi hindamine", "Seadme valik ja pakkumine", "Paigaldus", "Seadistamine ja koolitus"]}
-    included={["Sise- ja välisseadme paigaldus", "Torustik kuni 3m", "Seadistamine"]}
-    notIncluded={["Seadme maksumus", "Torustik üle 3m", "Lisaelektritööd"]}
+    included={["Sise- ja välisseadme paigaldus", "Torustik kuni 5m", "Seadistamine"]}
+    notIncluded={["Seadme maksumus", "Torustik üle 5m", "Lisaelektritööd"]}
     priceRange="390€"
     faqs={[
       { q: "Mis vahe on soojuspumbal ja konditsioneeril?", a: "Kaasaegne soojuspump töötab nii jahutus- kui küttereziimil. Konditsioneer on sama seade, mida kasutatakse peamiselt jahutuseks." },
