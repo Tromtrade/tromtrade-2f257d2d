@@ -85,8 +85,9 @@ const Footer = () =>
       <div className="container flex flex-wrap items-center justify-center gap-4 py-3 text-xs text-primary-foreground/60">
         <span>✓ Kohalik ettevõte Tartus</span>
         <span>✓ Sertifitseeritud paigaldus</span>
+        <span>✓ 2-aastane garantii</span>
+        <span>✓ Eestikeelne hooldustugi</span>
         <span>✓ Kiire reageerimine</span>
-        <span>✓ Garantiiga töö</span>
       </div>
     </div>
     <div className="border-t border-primary-foreground/10">
