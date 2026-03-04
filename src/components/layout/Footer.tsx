@@ -80,6 +80,23 @@ const Footer = () =>
         </div>
       </div>
     </div>
+    {/* Volitatud edasimüüjad */}
+    <div className="border-t border-primary-foreground/10">
+      <div className="container flex flex-col items-center gap-3 py-6">
+        <span className="text-xs font-semibold uppercase tracking-wider text-primary-foreground/50">Volitatud edasimüüja</span>
+        <div className="flex flex-wrap items-center justify-center gap-6">
+          <div className="flex items-center justify-center h-9 px-4 rounded bg-primary-foreground/10">
+            <span className="font-bold text-sm text-primary-foreground tracking-wide">Cooper&Hunter</span>
+          </div>
+          <div className="flex items-center justify-center h-9 px-4 rounded bg-primary-foreground/10">
+            <span className="font-bold text-sm text-primary-foreground tracking-wide">Panasonic</span>
+          </div>
+          <div className="flex items-center justify-center h-9 px-4 rounded bg-primary-foreground/10">
+            <span className="font-bold text-sm text-primary-foreground tracking-wide">Sinclair</span>
+          </div>
+        </div>
+      </div>
+    </div>
     {/* Trust bar */}
     <div className="border-t border-primary-foreground/10 bg-foreground">
       <div className="container flex flex-wrap items-center justify-center gap-4 py-3 text-xs text-primary-foreground/60">
