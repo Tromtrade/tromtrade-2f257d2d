@@ -32,7 +32,7 @@ const GeoInstallPage = ({ city, cityGenitive }: GeoLandingProps) => (
     included={[
       "Sise- ja välisseadme paigaldus",
       "Torustik kuni 3m",
-      "Elektriühendus",
+      "Elektriühendus kuni 1,5 m välisseadmest",
       "Vakumeerimine ja lekke kontroll",
       "Testkäivitus ja seadistamine",
       "Kasutuskoolitus",
