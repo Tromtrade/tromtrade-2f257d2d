@@ -24,7 +24,7 @@ const CalculatorPage = () => {
     if (metaEl) metaEl.setAttribute("content", "Arvuta, kui palju säästaksid õhksoojuspumbaga küttekulu. Tasuta kalkulaator ja personaalne pakkumine.");
   }, []);
 
-  const kWhPerM2 = currentHeating === "electric" ? 120 : currentHeating === "gas" ? 100 : 80;
+  const kWhPerM2 = currentHeating === "electric" ? 120 : 80;
   const annualKwh = area * kWhPerM2;
   const currentCost = annualKwh * elPrice;
   const copAvg = 3.5;
@@ -67,7 +67,6 @@ const CalculatorPage = () => {
                 <label className="text-sm font-medium text-foreground">Praegune kütteviis</label>
                 <select value={currentHeating} onChange={e => setCurrentHeating(e.target.value)} className="mt-1 w-full rounded-lg border border-input bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-ring">
                   <option value="electric">Elektriradiaator</option>
-                  <option value="gas">Gaasküte</option>
                   <option value="old_hp">Vanem soojuspump</option>
                   <option value="other">Muu</option>
                 </select>
