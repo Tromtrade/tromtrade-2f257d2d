@@ -14,7 +14,7 @@ const InstallationPage = () => (
       "Kuni 5 aastat garantiid töödele",
       "Paigaldus 1–3 tööpäevaga",
       "Tasuta konsultatsioon ja nõustamine",
-      "Korrektsed vaakumimise ja lekketestid",
+      "Korrektsed vakumeerimise ja lekketestid",
     ]}
     process={[
       "Võtate ühendust ja kirjeldate oma vajadust",
@@ -27,7 +27,7 @@ const InstallationPage = () => (
       "Sise- ja välisseadme paigaldus",
       "Torustik kuni 3m",
       "Elektriühendus",
-      "Vaakumimine ja lekke kontroll",
+      "Vakumeerimine ja lekke kontroll",
       "Testkäivitus ja seadistamine",
       "Kasutuskoolitus",
     ]}
@@ -46,7 +46,7 @@ const InstallationPage = () => (
           <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <p>Õhksoojuspump on üks energiatõhusamaid viise kodu kütmiseks ja jahutamiseks. Tartu piirkonnas, kus talvised temperatuurid langevad sageli alla -20°C, on oluline valida seade, mis töötab efektiivselt ka ekstreemsetes tingimustes, ja tagada selle korrektne paigaldus.</p>
             <p>Professionaalne paigaldus on kriitilise tähtsusega – see tagab seadme maksimaalse kasuteguri, pika tööea ja garantii kehtivuse. Tromtrade spetsialistid hindavad teie objekti eripärasid – ruumi suurust, soojustuse kvaliteeti, akende energiaklassi ja elektrisüsteemi – ning soovitavad optimaalse lahenduse.</p>
-            <p>Paigaldus hõlmab seadme kinnitamist, vasktoode paigaldust, elektriühendust, süsteemi vaakumimist ja lekketesti, külmaine lisamist, testkäivitust ning kasutuskoolituist. Kogu protsess võtab tavaliselt 1 tööpäeva.</p>
+            <p>Paigaldus hõlmab seadme kinnitamist, vasktoode paigaldust, elektriühendust, süsteemi vakumeerimist ja lekketesti, külmaine lisamist, testkäivitust ning kasutuskoolituist. Kogu protsess võtab tavaliselt 1 tööpäeva.</p>
           </div>
         </div>
         <div>
