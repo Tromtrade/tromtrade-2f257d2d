@@ -41,7 +41,7 @@ const GeoInstallPage = ({ city, cityGenitive }: GeoLandingProps) => (
       "Seadme maksumus (eraldi)",
       "Torustik üle 5m",
       "Lisaelektritööd",
-      "Vana seadme demontaaž",
+      "Vana seadme demontaaž (lisatasu)",
     ]}
     priceNote={`Paigalduse hind ${cityGenitive} sõltub objekti eripärast ja torustiku pikkusest.`}
     priceRange="390€"

@@ -35,7 +35,7 @@ const InstallationPage = () => (
       "Seadme maksumus (eraldi)",
       "Torustik üle 5m (lisatasu)",
       "Lisaelektritööd (vajadusel)",
-      "Vana seadme demontaaž",
+      "Vana seadme demontaaž (lisatasu)",
     ]}
     priceNote="Paigalduse hind sõltub objekti eripärast ja torustiku pikkusest."
     priceRange="390€"
