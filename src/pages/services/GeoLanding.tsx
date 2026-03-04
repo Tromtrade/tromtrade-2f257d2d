@@ -33,7 +33,7 @@ const GeoInstallPage = ({ city, cityGenitive }: GeoLandingProps) => (
       "Sise- ja välisseadme paigaldus",
       "Torustik kuni 3m",
       "Elektriühendus",
-      "Vaakumimine ja lekke kontroll",
+      "Vakumeerimine ja lekke kontroll",
       "Testkäivitus ja seadistamine",
       "Kasutuskoolitus",
     ]}
@@ -51,7 +51,7 @@ const GeoInstallPage = ({ city, cityGenitive }: GeoLandingProps) => (
           <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <p>Õhksoojuspump on energiatõhus viis kodu kütmiseks ja jahutamiseks. {city} piirkonnas, kus talvised temperatuurid võivad langeda alla -20°C, on oluline valida seade, mis töötab efektiivselt ka madalatel temperatuuridel.</p>
             <p>Professionaalne paigaldus tagab seadme maksimaalse kasuteguri ning pika tööea. Meie spetsialistid hindavad teie objekti eripärasid – ruumi suurust, soojustuse kvaliteeti ja elektrisüsteemi – ning soovitavad optimaalse lahenduse.</p>
-            <p>Paigaldus sisaldab seadme kinnitamist, torustiku ja elektriühendust, vaakumimist ja lekke kontrolli, testkäivitust ning kasutusjuhendamist. Kogu protsess võtab tavaliselt 1 tööpäeva.</p>
+            <p>Paigaldus sisaldab seadme kinnitamist, torustiku ja elektriühendust, vakumeerimist ja lekke kontrolli, testkäivitust ning kasutusjuhendamist. Kogu protsess võtab tavaliselt 1 tööpäeva.</p>
           </div>
         </div>
         <div>
