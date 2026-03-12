@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Wrench, Wind, Thermometer, ArrowRightLeft, Settings, ArrowRight } from "lucide-react";
+import { Wrench, Wind, Thermometer, ArrowRightLeft, Settings, ArrowRight, FileCheck } from "lucide-react";
 
 const services = [
   {
@@ -36,6 +36,13 @@ const services = [
     desc: "Seadmete demonteerimine, teisaldamine ja uuesti paigaldamine. Vananenud seadmete keskkonnasõbralik utiliseerimine.",
     price: "70€",
     href: "/seadmete-umberpaigaldus-ja-utiliseerimine",
+  },
+  {
+    icon: FileCheck,
+    title: "Projekteerimine ja seadustamine",
+    desc: "Kliimaseadmete ja soojuspumpade paigaldusprojektide koostamine ning ehituslubade taotlemine.",
+    price: "küsi hinda",
+    href: "/projekteerimine-ja-seadustamine",
   },
 ];
 

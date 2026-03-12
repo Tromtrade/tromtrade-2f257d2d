@@ -24,6 +24,7 @@ const Maintenance = lazy(() => import("./pages/services/Maintenance"));
 const Repair = lazy(() => import("./pages/services/Repair"));
 const ACInstall = lazy(() => import("./pages/services/ACInstall"));
 const Relocation = lazy(() => import("./pages/services/Relocation"));
+const Design = lazy(() => import("./pages/services/Design"));
 const GeoElva = lazy(() => import("./pages/services/GeoLanding").then(m => ({ default: m.ElvaPage })));
 const GeoVoru = lazy(() => import("./pages/services/GeoLanding").then(m => ({ default: m.VoruPage })));
 
@@ -59,6 +60,7 @@ const App = () => (
             <Route path="/ohksoojuspumba-remont-tartu" element={<Repair />} />
             <Route path="/kliimaseadme-paigaldus-tartu" element={<ACInstall />} />
             <Route path="/seadmete-umberpaigaldus-ja-utiliseerimine" element={<Relocation />} />
+            <Route path="/projekteerimine-ja-seadustamine" element={<Design />} />
             <Route path="/ohksoojuspumba-paigaldus-elva" element={<GeoElva />} />
             <Route path="/ohksoojuspumba-paigaldus-voru" element={<GeoVoru />} />
             <Route path="*" element={<NotFound />} />

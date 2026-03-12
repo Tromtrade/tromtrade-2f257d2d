@@ -1,7 +1,7 @@
 import Layout from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Thermometer, Settings, Wrench, Wind, ArrowRightLeft } from "lucide-react";
+import { ArrowRight, Thermometer, Settings, Wrench, Wind, ArrowRightLeft, FileCheck } from "lucide-react";
 
 const services = [
   { icon: Thermometer, title: "Õhk-õhk soojuspumba paigaldus", desc: "Professionaalne soojuspumba paigaldus Tartus ja Lõuna-Eestis. Aitame valida õige seadme ja teostame täislahenduse.", href: "/ohksoojuspumba-paigaldus-tartu", price: "alates 390€" },
@@ -9,6 +9,7 @@ const services = [
   { icon: Wrench, title: "Soojuspumba remont", desc: "Rikete diagnoosimine ja remont. Väljakutsed Tartus ja lähiümbruses, kiire reageerimine.", href: "/ohksoojuspumba-remont-tartu", price: "alates 60€" },
   { icon: Wind, title: "Kliimaseadme paigaldus", desc: "Jahutus- ja kliimaseadmete paigaldus kodudesse, kontoritesse ja äriruumidesse.", href: "/kliimaseadme-paigaldus-tartu", price: "alates 390€" },
   { icon: ArrowRightLeft, title: "Seadmete ümberpaigaldus ja utiliseerimine", desc: "Olemasoleva seadme demonteerimine, teisaldamine ja uuesti paigaldamine.", href: "/seadmete-umberpaigaldus-ja-utiliseerimine", price: "küsi hinda" },
+  { icon: FileCheck, title: "Projekteerimine ja seadustamine", desc: "Kliimaseadmete ja soojuspumpade paigaldusprojektide koostamine ning ehituslubade taotlemine.", href: "/projekteerimine-ja-seadustamine", price: "küsi hinda" },
 ];
 
 const ServicesPage = () => (
