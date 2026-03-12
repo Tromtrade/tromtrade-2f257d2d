@@ -2,7 +2,7 @@ import { Shield, Clock, Award, ThumbsUp } from "lucide-react";
 
 const items = [
   { icon: Clock, label: "Kiire reageerimine", desc: "Vastame 24h jooksul" },
-  { icon: Shield, label: "Garantii töödele", desc: "Kuni 5 aastat" },
+  { icon: Shield, label: "Garantii töödele", desc: "Kuni 2 aastat" },
   { icon: Award, label: "Sertifitseeritud", desc: "F-gaasi pädevus" },
   { icon: ThumbsUp, label: "100+ paigaldust aastas", desc: "Rahulolevat klienti" },
 ];
