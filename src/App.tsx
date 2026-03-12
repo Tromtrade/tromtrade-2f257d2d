@@ -60,6 +60,7 @@ const App = () => (
             <Route path="/ohksoojuspumba-remont-tartu" element={<Repair />} />
             <Route path="/kliimaseadme-paigaldus-tartu" element={<ACInstall />} />
             <Route path="/seadmete-umberpaigaldus-ja-utiliseerimine" element={<Relocation />} />
+            <Route path="/projekteerimine-ja-seadustamine" element={<Design />} />
             <Route path="/ohksoojuspumba-paigaldus-elva" element={<GeoElva />} />
             <Route path="/ohksoojuspumba-paigaldus-voru" element={<GeoVoru />} />
             <Route path="*" element={<NotFound />} />
