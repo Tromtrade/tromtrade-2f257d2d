@@ -3,14 +3,16 @@ import ServiceLanding from "@/components/ServiceLanding";
 const DesignPage = () => (
   <ServiceLanding
     title="Projekteerimine ja seadustamine | Tromtrade OÜ"
-    metaDescription="Kliimaseadmete ja soojuspumpade paigaldusprojektide koostamine ning ehituslubade taotlemine Tartus ja Lõuna-Eestis."
+    metaDescription="Soojuspumba ja kliimaseadme seadustamine Tartus ja Lõuna-Eestis. Tagab korrektse andmestiku Ehitisregistris, on vajalik kindlustusjuhtumite puhul ja tõstab kodu turuväärtust."
     h1="Projekteerimine ja seadustamine"
-    description="Koostame paigaldusprojekte ja aitame seadustada kliimaseadmete ning soojuspumpade paigaldust. Vajalik korterelamutesse ja äriruumidesse."
-    benefitsTitle="Miks on projekteerimine vajalik?"
+    description="Soojuspumba seadustamine on oluline samm, mis tagab kinnisvara korrektse andmestiku Ehitisregistris (EHR), on vajalik kindlustusjuhtumite puhul ja tõstab kodu turuväärtust. Koostame paigaldusprojekte ja aitame seadustada kliimaseadmete ning soojuspumpade paigaldust."
+    benefitsTitle="Miks on seadustamine oluline?"
     benefits={[
+      "Tagab korrektse andmestiku Ehitisregistris (EHR)",
+      "Vajalik kindlustusjuhtumite puhul",
+      "Tõstab kodu turuväärtust",
       "Korterelamu puhul nõuab KÜ projekti",
       "Äriruumides vajalik ehitusloa taotlemiseks",
-      "Tagab paigalduse vastavuse normidele",
       "Professionaalne dokumentatsioon",
     ]}
     process={[
