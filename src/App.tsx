@@ -24,6 +24,7 @@ const Maintenance = lazy(() => import("./pages/services/Maintenance"));
 const Repair = lazy(() => import("./pages/services/Repair"));
 const ACInstall = lazy(() => import("./pages/services/ACInstall"));
 const Relocation = lazy(() => import("./pages/services/Relocation"));
+const Design = lazy(() => import("./pages/services/Design"));
 const GeoElva = lazy(() => import("./pages/services/GeoLanding").then(m => ({ default: m.ElvaPage })));
 const GeoVoru = lazy(() => import("./pages/services/GeoLanding").then(m => ({ default: m.VoruPage })));
 
