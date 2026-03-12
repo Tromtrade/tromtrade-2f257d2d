@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Wrench, Wind, Thermometer, ArrowRightLeft, Settings, ArrowRight } from "lucide-react";
+import { Wrench, Wind, Thermometer, ArrowRightLeft, Settings, ArrowRight, FileCheck } from "lucide-react";
 
 const services = [
   {
