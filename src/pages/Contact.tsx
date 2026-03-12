@@ -71,7 +71,7 @@ const ContactPage = () => {
               </div>
               <div className="rounded-xl border border-border overflow-hidden">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d130168.6012599489!2d26.6217!3d58.3776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eb36d8d55cecb1%3A0x400b36d18fc6270!2sTartu!5e0!3m2!1set!2see!4v1"
+                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=Lehe+11,+Tartu,+Estonia&zoom=15"
                   className="w-full h-48"
                   loading="lazy"
                   title="Tartu kaart"
