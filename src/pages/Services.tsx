@@ -8,7 +8,7 @@ const services = [
   { icon: Settings, title: "Soojuspumba hooldus", desc: "Regulaarne hooldus tagab seadme pikaealisuse ja energiatõhususe. Kiire ja asjatundlik teenus.", href: "/ohksoojuspumba-hooldus-tartu", price: "alates 80€" },
   { icon: Wrench, title: "Soojuspumba remont", desc: "Rikete diagnoosimine ja remont. Väljakutsed Tartus ja lähiümbruses, kiire reageerimine.", href: "/ohksoojuspumba-remont-tartu", price: "alates 60€" },
   { icon: Wind, title: "Kliimaseadme paigaldus", desc: "Jahutus- ja kliimaseadmete paigaldus kodudesse, kontoritesse ja äriruumidesse.", href: "/kliimaseadme-paigaldus-tartu", price: "alates 390€" },
-  { icon: ArrowRightLeft, title: "Seadmete ümberpaigaldus ja utiliseerimine", desc: "Olemasoleva seadme demonteerimine, teisaldamine ja uuesti paigaldamine.", href: "/seadmete-umberpaigaldus-ja-utiliseerimine", price: "küsi hinda" },
+  { icon: ArrowRightLeft, title: "Seadmete ümberpaigaldus ja utiliseerimine", desc: "Olemasoleva seadme demonteerimine, teisaldamine ja uuesti paigaldamine.", href: "/seadmete-umberpaigaldus-ja-utiliseerimine", price: "alates 150€" },
   { icon: FileCheck, title: "Projekteerimine ja seadustamine", desc: "Kliimaseadmete ja soojuspumpade paigaldusprojektide koostamine ning ehituslubade taotlemine.", href: "/projekteerimine-ja-seadustamine", price: "küsi hinda" },
 ];
 

@@ -8,7 +8,7 @@ const RelocationPage = () => (
     process={["Hinnangu küsimine", "Demonteerimine", "Transport (vajadusel)", "Paigaldamine uues asukohas"]}
     included={["Demonteerimine", "Külmaine kogumine", "Transport kokkuleppel"]}
     notIncluded={["Uued materjalid uues asukohas", "Paigaldus uues asukohas (eraldi)"]}
-    priceRange="küsi hinda"
+    priceRange="150€"
     faqs={[
       { q: "Kas vana seadet saab uuesti kasutada?", a: "Jah, kui seade on töökorras, saab selle uuesti paigaldada." },
       { q: "Kuidas toimub utiliseerimine?", a: "Kogume külmaine vastavalt F-gaasi nõuetele ja seade utiliseeritakse keskkonnasõbralikult." },

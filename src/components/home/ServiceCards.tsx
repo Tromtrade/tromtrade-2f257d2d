@@ -34,7 +34,7 @@ const services = [
     icon: ArrowRightLeft,
     title: "Ümberpaigaldus ja utiliseerimine",
     desc: "Seadmete demonteerimine, teisaldamine ja uuesti paigaldamine. Vananenud seadmete keskkonnasõbralik utiliseerimine.",
-    price: "70€",
+    price: "150€",
     href: "/seadmete-umberpaigaldus-ja-utiliseerimine",
   },
   {
