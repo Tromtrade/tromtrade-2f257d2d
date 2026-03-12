@@ -66,7 +66,7 @@ const ContactPage = () => {
                 </a>
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10"><MapPin className="h-5 w-5 text-primary" /></div>
-                  <div><div className="text-sm text-muted-foreground">Teeninduspiirkond</div><div className="font-semibold text-foreground">Tartu ja Lõuna-Eesti</div></div>
+                  <div><div className="text-sm text-muted-foreground">Aadress</div><div className="font-semibold text-foreground">Lehe 11, Tartu linn</div></div>
                 </div>
               </div>
               <div className="rounded-xl border border-border overflow-hidden">
