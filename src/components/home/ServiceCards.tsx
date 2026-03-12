@@ -37,6 +37,13 @@ const services = [
     price: "70€",
     href: "/seadmete-umberpaigaldus-ja-utiliseerimine",
   },
+  {
+    icon: FileCheck,
+    title: "Projekteerimine ja seadustamine",
+    desc: "Kliimaseadmete ja soojuspumpade paigaldusprojektide koostamine ning ehituslubade taotlemine.",
+    price: "küsi hinda",
+    href: "/projekteerimine-ja-seadustamine",
+  },
 ];
 
 const ServiceCards = () => (
