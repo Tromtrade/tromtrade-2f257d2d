@@ -66,12 +66,12 @@ const ContactPage = () => {
                 </a>
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10"><MapPin className="h-5 w-5 text-primary" /></div>
-                  <div><div className="text-sm text-muted-foreground">Teeninduspiirkond</div><div className="font-semibold text-foreground">Tartu ja Lõuna-Eesti</div></div>
+                  <div><div className="text-sm text-muted-foreground">Aadress</div><div className="font-semibold text-foreground">Lehe 11, Tartu linn</div></div>
                 </div>
               </div>
               <div className="rounded-xl border border-border overflow-hidden">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d130168.6012599489!2d26.6217!3d58.3776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eb36d8d55cecb1%3A0x400b36d18fc6270!2sTartu!5e0!3m2!1set!2see!4v1"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2089.5!2d26.7282!3d58.3836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eb371b1a7585c7%3A0x0!2sLehe+11%2C+Tartu!5e0!3m2!1set!2see!4v1"
                   className="w-full h-48"
                   loading="lazy"
                   title="Tartu kaart"
