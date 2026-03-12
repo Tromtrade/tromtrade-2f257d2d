@@ -123,8 +123,7 @@ const ServiceLanding = ({ title, metaDescription, h1, description, benefits, ben
 
           {priceRange && (
             <div className="rounded-xl hero-gradient p-6 text-center">
-              {priceNote && <p className="text-primary-foreground/80 text-sm mb-1">{priceNote}</p>}
-              <p className="text-primary-foreground/80 text-sm">Hind alates</p>
+              {priceNote ? <p className="text-primary-foreground/80 text-sm mb-1">{priceNote}</p> : <p className="text-primary-foreground/80 text-sm">Hind alates</p>}
               <p className="font-display text-3xl font-extrabold text-primary-foreground">{priceRange}</p>
               <Link to="/broneeri" className="mt-4 inline-block"><Button variant="accent" className="gap-2">Küsi täpset hinda <ArrowRight className="h-4 w-4" /></Button></Link>
             </div>
