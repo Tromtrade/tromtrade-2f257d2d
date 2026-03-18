@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 import img1 from "@/assets/gallery/rooftop-units.webp";
 import img2 from "@/assets/gallery/panasonic-outdoor.webp";
 import img3 from "@/assets/gallery/samsung-outdoor.webp";
-import img4 from "@/assets/gallery/company-van.jpeg";
+import img4 from "@/assets/gallery/company-van.jpg";
 
 const images = [
   { src: img1, alt: "Katusele paigaldatud välisseadmed" },

@@ -7,7 +7,7 @@ import img2 from "@/assets/gallery/panasonic-outdoor.webp";
 import img3 from "@/assets/gallery/samsung-outdoor.webp";
 import img4 from "@/assets/gallery/indoor-unit.webp";
 import img5 from "@/assets/gallery/floor-unit.webp";
-import img6 from "@/assets/gallery/company-van.jpeg";
+import img6 from "@/assets/gallery/company-van.jpg";
 
 const projects = [
   { src: img1, title: "Katusele paigaldatud välisseadmed", location: "Tartu", type: "Paigaldus" },
