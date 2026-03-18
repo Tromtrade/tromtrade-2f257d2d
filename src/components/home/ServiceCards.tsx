@@ -41,7 +41,7 @@ const services = [
     icon: FileCheck,
     title: "Projekteerimine ja seadustamine",
     desc: "Kliimaseadmete ja soojuspumpade paigaldusprojektide koostamine ning ehituslubade taotlemine.",
-    price: "küsi hinda",
+    price: "300€",
     href: "/projekteerimine-ja-seadustamine",
   },
 ];
