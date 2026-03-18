@@ -32,7 +32,7 @@ const ProjectsPage = () => (
           {projects.map((p, i) => (
             <div key={i} className="group overflow-hidden rounded-xl border border-border bg-card">
               <div className="overflow-hidden">
-                <img src={p.src} alt={p.title} className="aspect-[4/3] w-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy" />
+                <img src={p.src} alt={p.title} className="aspect-[3/2] w-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy" />
               </div>
               <div className="p-4">
                 <h3 className="font-semibold text-foreground">{p.title}</h3>
