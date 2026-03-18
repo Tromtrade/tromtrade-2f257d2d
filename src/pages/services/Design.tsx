@@ -30,8 +30,7 @@ const DesignPage = () => (
       "Riigilõivud",
       "Seadme ja paigalduse maksumus (eraldi)",
     ]}
-    priceNote=" "
-    priceRange="Küsi hinda"
+    priceRange="300€"
     ctaLabel="Küsi pakkumist"
     faqs={[
       { q: "Millal on projekt vajalik?", a: "Korterelamutesse paigaldamisel nõuab KÜ tavaliselt projekti. Äriruumides võib olla vajalik ehitusluba." },
