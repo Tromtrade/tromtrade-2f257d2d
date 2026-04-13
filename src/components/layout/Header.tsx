@@ -25,7 +25,7 @@ const Header = () => {
     <header className="sticky top-0 z-50 border-b border-border bg-card/95 backdrop-blur-md">
       <div className="container flex h-16 items-center justify-between md:h-20">
         <Link to="/" className="flex items-center gap-2" aria-label={`${company.name} avaleht`}>
-          <img src={logo} alt={`${company.name} logo`} className="h-14 md:h-20 object-contain" width={160} height={80} />
+          <img src={logo} alt={`${company.name} logo`} className="h-16 md:h-24 object-contain" width={192} height={96} />
         </Link>
 
         <nav className="hidden items-center gap-1 xl:flex" aria-label="Peamenüü">
