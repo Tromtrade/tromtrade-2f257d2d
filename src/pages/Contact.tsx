@@ -1,47 +1,81 @@
+import { useState, useRef } from "react";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, MapPin, ArrowRight, Loader2 } from "lucide-react";
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+import SEOHead from "@/components/shared/SEOHead";
+import { pageMeta } from "@/config/seo";
+import { company } from "@/config/company";
+import WhatsAppIcon from "@/components/shared/WhatsAppIcon";
+import { isRateLimited, getUtmParams, isValidEstonianPhone } from "@/utils/form-helpers";
+import { analytics } from "@/utils/analytics";
 
 const ContactPage = () => {
   const [form, setForm] = useState({ name: "", phone: "", email: "", message: "", consent: false });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
-  const set = (k: string, v: string | boolean) => setForm(f => ({ ...f, [k]: v }));
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const honeypotRef = useRef<HTMLInputElement>(null);
+
+  const set = (k: string, v: string | boolean) => {
+    setForm(f => ({ ...f, [k]: v }));
+    setErrors(e => ({ ...e, [k]: "" }));
+  };
+
+  const validate = (): boolean => {
+    const errs: Record<string, string> = {};
+    if (!form.name.trim()) errs.name = "Nimi on kohustuslik";
+    if (!form.phone.trim()) errs.phone = "Telefon on kohustuslik";
+    else if (!isValidEstonianPhone(form.phone)) errs.phone = "Sisestage korrektne telefoninumber";
+    setErrors(errs);
+    return Object.keys(errs).length === 0;
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (honeypotRef.current?.value) return;
+    if (!validate()) return;
+
+    if (isRateLimited()) {
+      toast.error("Liiga palju päringuid. Proovige mõne minuti pärast.");
+      return;
+    }
+
     setLoading(true);
-    const params = new URLSearchParams(window.location.search);
+    const utm = getUtmParams();
     const { error } = await supabase.from("leads").insert({
       form_type: "contact",
-      name: form.name,
-      phone: form.phone,
-      email: form.email || null,
-      message: form.message || null,
+      name: form.name.trim(),
+      phone: form.phone.trim(),
+      email: form.email.trim() || null,
+      message: form.message.trim() || null,
       consent: form.consent,
       page_url: window.location.pathname,
-      utm_source: params.get("utm_source") || null,
-      utm_medium: params.get("utm_medium") || null,
-      utm_campaign: params.get("utm_campaign") || null,
+      ...utm,
     });
     setLoading(false);
+
     if (error) {
       toast.error("Viga saatmisel. Palun proovige uuesti.");
       return;
     }
+
+    analytics.lead("contact");
     setSubmitted(true);
   };
 
+  const FieldError = ({ field }: { field: string }) =>
+    errors[field] ? <p className="mt-1 text-xs text-destructive">{errors[field]}</p> : null;
+
   return (
     <Layout>
+      <SEOHead meta={pageMeta.contact} />
       <section className="hero-gradient py-12">
         <div className="container text-center">
           <h1 className="font-display text-3xl font-extrabold text-primary-foreground md:text-4xl">Võta ühendust Tromtrade'iga</h1>
-          <p className="mt-2 text-primary-foreground/80">Telefon: +372 5564 4610 · Email: info@tromtrade.ee · Teeninduspiirkond: Tartu ja Lõuna-Eesti</p>
+          <p className="mt-2 text-primary-foreground/80">Telefon: {company.phoneDisplay} · Email: {company.email} · {company.serviceAreaLabel}</p>
         </div>
       </section>
       <section className="py-12">
@@ -50,23 +84,23 @@ const ContactPage = () => {
             <div className="space-y-6">
               <div className="rounded-xl border border-border bg-card p-6 space-y-4">
                 <h2 className="font-display text-xl font-bold text-foreground">Kontaktandmed</h2>
-                <a href="tel:+37255644610" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10"><Phone className="h-5 w-5 text-primary" /></div>
-                  <div><div className="text-sm text-muted-foreground">Telefon</div><div className="font-semibold">5564 4610</div></div>
+                <a href={`tel:${company.phone}`} className="flex items-center gap-3 text-foreground hover:text-primary transition-colors">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10"><Phone className="h-5 w-5 text-primary" aria-hidden="true" /></div>
+                  <div><div className="text-sm text-muted-foreground">Telefon</div><div className="font-semibold">{company.phoneDisplay}</div></div>
                 </a>
-                <a href="https://wa.me/37255644610" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-foreground hover:text-green-600 transition-colors">
+                <a href={company.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-foreground hover:text-green-600 transition-colors">
                   <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-green-50">
-                    <svg className="h-5 w-5 text-green-600" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    <WhatsAppIcon className="h-5 w-5 text-green-600" />
                   </div>
                   <div><div className="text-sm text-muted-foreground">WhatsApp</div><div className="font-semibold">Kirjuta WhatsAppis</div></div>
                 </a>
-                <a href="mailto:info@tromtrade.ee" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10"><Mail className="h-5 w-5 text-primary" /></div>
-                  <div><div className="text-sm text-muted-foreground">E-mail</div><div className="font-semibold">info@tromtrade.ee</div></div>
+                <a href={`mailto:${company.email}`} className="flex items-center gap-3 text-foreground hover:text-primary transition-colors">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10"><Mail className="h-5 w-5 text-primary" aria-hidden="true" /></div>
+                  <div><div className="text-sm text-muted-foreground">E-mail</div><div className="font-semibold">{company.email}</div></div>
                 </a>
                 <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10"><MapPin className="h-5 w-5 text-primary" /></div>
-                  <div><div className="text-sm text-muted-foreground">Aadress</div><div className="font-semibold text-foreground">Lehe 11, Tartu linn</div></div>
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10"><MapPin className="h-5 w-5 text-primary" aria-hidden="true" /></div>
+                  <div><div className="text-sm text-muted-foreground">Aadress</div><div className="font-semibold text-foreground">{company.address.full}</div></div>
                 </div>
               </div>
               <div className="rounded-xl border border-border overflow-hidden">
@@ -74,7 +108,7 @@ const ContactPage = () => {
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2089.5!2d26.7282!3d58.3836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eb371b1a7585c7%3A0x0!2sLehe+11%2C+Tartu!5e0!3m2!1set!2see!4v1"
                   className="w-full h-48"
                   loading="lazy"
-                  title="Tartu kaart"
+                  title="Tromtrade asukoht kaardil"
                 />
               </div>
             </div>
@@ -84,15 +118,24 @@ const ContactPage = () => {
                   <div className="text-5xl mb-4">✅</div>
                   <h3 className="font-display text-xl font-bold text-foreground">Sõnum saadetud!</h3>
                   <p className="mt-2 text-muted-foreground">Vastame teile 24 tunni jooksul.</p>
-                  <p className="mt-1 text-sm text-muted-foreground/70">Kui teil on kiire, helistage <a href="tel:+37255644610" className="text-primary underline">5564 4610</a>.</p>
+                  <p className="mt-1 text-sm text-muted-foreground/70">Kui teil on kiire, helistage <a href={`tel:${company.phone}`} className="text-primary underline">{company.phoneDisplay}</a>.</p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-4 rounded-xl border border-border bg-card p-6">
+                <form onSubmit={handleSubmit} className="space-y-4 rounded-xl border border-border bg-card p-6" noValidate>
                   <h2 className="font-display text-xl font-bold text-foreground">Kirjutage meile</h2>
-                  <input required placeholder="Nimi *" value={form.name} onChange={e => set("name", e.target.value)} className="w-full rounded-lg border border-input bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
-                  <input required type="tel" placeholder="Telefon *" value={form.phone} onChange={e => set("phone", e.target.value)} className="w-full rounded-lg border border-input bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
-                  <input type="email" placeholder="E-mail" value={form.email} onChange={e => set("email", e.target.value)} className="w-full rounded-lg border border-input bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
-                  <textarea rows={4} placeholder="Sõnum" value={form.message} onChange={e => set("message", e.target.value)} className="w-full rounded-lg border border-input bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
+                  <div className="absolute -left-[9999px]" aria-hidden="true">
+                    <input type="text" tabIndex={-1} autoComplete="off" ref={honeypotRef} />
+                  </div>
+                  <div>
+                    <input required placeholder="Nimi *" value={form.name} onChange={e => set("name", e.target.value)} className="w-full rounded-lg border border-input bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Nimi" aria-invalid={!!errors.name} />
+                    <FieldError field="name" />
+                  </div>
+                  <div>
+                    <input required type="tel" placeholder="Telefon *" value={form.phone} onChange={e => set("phone", e.target.value)} className="w-full rounded-lg border border-input bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Telefon" aria-invalid={!!errors.phone} />
+                    <FieldError field="phone" />
+                  </div>
+                  <input type="email" placeholder="E-mail" value={form.email} onChange={e => set("email", e.target.value)} className="w-full rounded-lg border border-input bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-ring" aria-label="E-mail" />
+                  <textarea rows={4} placeholder="Sõnum" value={form.message} onChange={e => set("message", e.target.value)} className="w-full rounded-lg border border-input bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Sõnum" />
                   <label className="flex items-start gap-2 text-sm text-muted-foreground">
                     <input type="checkbox" required checked={form.consent} onChange={e => set("consent", e.target.checked)} className="mt-0.5" />
                     Nõustun <Link to="/privaatsus" className="text-primary underline">privaatsuspoliitikaga</Link>

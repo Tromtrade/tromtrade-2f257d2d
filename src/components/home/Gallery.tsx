@@ -33,8 +33,11 @@ const GallerySection = () => (
             <img
               src={img.src}
               alt={img.alt}
+              width={400}
+              height={267}
               className="aspect-[3/2] w-full object-cover transition-transform duration-300 group-hover:scale-105"
               loading="lazy"
+              decoding="async"
             />
           </div>
         ))}
